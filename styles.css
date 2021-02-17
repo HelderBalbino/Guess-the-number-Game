@@ -1,0 +1,78 @@
+:root {
+    --whiteSmoke: whitesmoke;
+    --red: rgb(255, 0, 0);
+    --aquamarine: aquamarine;
+}
+
+html {
+    font-size: 10px;
+    font-weight: 300;
+}
+
+body {
+    width: 90vw;
+    margin: 0 auto;
+    background-color: aqua;
+}
+
+main {
+    text-align: center;
+    background-color: var(--whiteSmoke);
+    border: solid 2px var(--red);
+    min-height: 80vh;
+    border-radius: 2rem;
+    padding: 1rem;
+    color: rgb(49, 68, 92);
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin: 8rem 0;
+}
+
+p {
+    font-size: 1.8rem;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    background-color: var(--aquamarine);
+    padding: 1.6rem;
+    border-radius: 1rem 1rem 0 0;
+}
+
+button:last-child {
+    background-color: var(--red);
+    border-radius: 0 0 1rem 1rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+input[type='number'] {
+    border: solid 1px lightgray;
+    background-color: transparent;
+    margin: 2rem 0;
+    padding: 1rem 0;
+    width: 16rem;
+    text-align: center;
+}
+
+#range {
+    display: flex;
+    background-color: var(--aquamarine);
+    height: 50px;
+    padding: 0;
+    margin: 0 0 4rem 0;
+}
+
+#rangeOutput {
+    font-size: 1.6rem;
+}

@@ -76,3 +76,28 @@ input[type='number'] {
 #rangeOutput {
     font-size: 1.6rem;
 }
+
+.stats {
+    text-align: left;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.info span {
+    font-size: 1.6rem;
+}
+
+#newGameButton {
+    border-radius: 1rem;
+}
+
+@media (min-width: 800px) {
+    body {
+        width: 60vw;
+    }
+}

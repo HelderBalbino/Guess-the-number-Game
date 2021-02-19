@@ -9,6 +9,11 @@ function gameEnded() {
 	document.getElementById('newGameButton').style.display = 'inline';
 	document.getElementById('inputBox').setAttribute('readonly', 'readonly');
 }
+
+// created a new game function
+function newGame() {
+	window.location.reload();
+}
 // this random number function will be called as soon as the screen loads
 // it hides part of the screen
 function init() {
@@ -37,7 +42,7 @@ function mediumMode() {
 }
 // hard button, calling the startGameView function, onclick
 function hardMode() {
-	maxGuesses = 5;
+	maxGuesses = 3;
 	startGameView();
 }
 

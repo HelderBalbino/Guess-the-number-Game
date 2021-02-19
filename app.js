@@ -2,6 +2,7 @@
 let givenRandomNumber;
 let userGuesses = [];
 let attempts = 0; /* adding the number of attempts */
+let maxGuesses;
 
 // this random number function will be called as soon as the screen loads
 // it hides part of the screen
@@ -21,10 +22,17 @@ function startGameView() {
 
 // easy button, calling the startGameView function, onclick
 function easyMode() {
+	maxGuesses = 10;
+	startGameView();
+}
+
+function mediumMode() {
+	maxGuesses = 6;
 	startGameView();
 }
 // hard button, calling the startGameView function, onclick
 function hardMode() {
+	maxGuesses = 5;
 	startGameView();
 }
 
@@ -39,15 +47,29 @@ function compareGuess() {
 	/* adding the number of attempts */
 	attempts++;
 	document.getElementById('attempts').innerHTML = attempts;
-	if (userGuess > givenRandomNumber) {
-		document.getElementById('textOutput').innerHTML = 'Your guess was too high!';
-		document.getElementById('inputBox').value = '';
-	} else if (userGuess < givenRandomNumber) {
-		document.getElementById('textOutput').innerHTML = 'Your guess was too low!';
-		document.getElementById('inputBox').value = '';
+	// created an if statement to evaluate if the user attempt is bigger than the max number of guesses
+	if (attempts < maxGuesses) {
+		if (userGuess > givenRandomNumber) {
+			document.getElementById('textOutput').innerHTML = ` Your guess was too high!`;
+			document.getElementById('inputBox').value = '';
+		} else if (userGuess < givenRandomNumber) {
+			document.getElementById('textOutput').innerHTML = `Your guess was too low!`;
+			document.getElementById('inputBox').value = '';
+		} else {
+			document.getElementById(
+				'textOutput'
+			).innerHTML = `🎊 CONGRATULATIONS you guessed the right number In ${attempts} attempts!!! 🎊`;
+		}
 	} else {
-		document.getElementById(
-			'textOutput'
-		).innerHTML = `🎊 CONGRATULATIONS you guessed the right number In ${attempts} attempts!!! 🎊`;
+		if (userGuess > givenRandomNumber) {
+			document.getElementById('textOutput').innerHTML = `You you've lost! 
+            The number was: ${givenRandomNumber}`;
+		} else if (userGuess < givenRandomNumber) {
+			document.getElementById('textOutput').innerHTML = `You you've lost! 
+            The number was: ${givenRandomNumber}`;
+		} else {
+			document.getElementById('textOutput').innerHTML = `
+            🎊 CONGRATULATIONS you guessed the right number In ${attempts} attempts!!! 🎊`;
+		}
 	}
 }

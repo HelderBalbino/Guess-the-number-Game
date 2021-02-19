@@ -2,6 +2,7 @@
     --whiteSmoke: whitesmoke;
     --red: rgb(255, 0, 0);
     --aquamarine: aquamarine;
+    --orange: rgb(255, 123, 0);
 }
 
 html {
@@ -12,7 +13,7 @@ html {
 body {
     width: 90vw;
     margin: 0 auto;
-    background-color: aqua;
+    background-color: rgb(2, 2, 2);
 }
 
 main {
@@ -28,6 +29,9 @@ main {
 h2 {
     font-size: 2.2rem;
     margin: 8rem 0;
+    background-color: rgba(137, 43, 226, 0.63);
+    border-radius: 1rem;
+    padding: 2rem;
 }
 
 p {
@@ -40,11 +44,17 @@ p {
 }
 
 button {
+    height: 8rem;
     border: none;
     cursor: pointer;
     background-color: var(--aquamarine);
     padding: 1.6rem;
     border-radius: 1rem 1rem 0 0;
+}
+
+button:nth-child(2) {
+    background-color: var(--orange);
+    border-radius: 0;
 }
 
 button:last-child {

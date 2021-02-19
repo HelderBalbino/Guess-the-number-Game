@@ -1,6 +1,7 @@
 // create global variables
 let givenRandomNumber;
 let userGuesses = [];
+let attempts = 0; /* adding the number of attempts */
 
 // this random number function will be called as soon as the screen loads
 // it hides part of the screen
@@ -35,7 +36,9 @@ function compareGuess() {
 	userGuesses.push(`  ${userGuess}`);
 	//displays the userGuesses array in the span
 	document.getElementById('guesses').innerHTML = userGuesses;
-
+	/* adding the number of attempts */
+	attempts++;
+	document.getElementById('attempts').innerHTML = attempts;
 	if (userGuess > givenRandomNumber) {
 		document.getElementById('textOutput').innerHTML = 'Your guess was too high!';
 		document.getElementById('inputBox').value = '';
@@ -43,6 +46,8 @@ function compareGuess() {
 		document.getElementById('textOutput').innerHTML = 'Your guess was too low!';
 		document.getElementById('inputBox').value = '';
 	} else {
-		document.getElementById('textOutput').innerHTML = ' 🎊 CONGRATULATIONS you guessed the right number!!! 🎊';
+		document.getElementById(
+			'textOutput'
+		).innerHTML = `🎊 CONGRATULATIONS you guessed the right number In ${attempts} attempts!!! 🎊`;
 	}
 }

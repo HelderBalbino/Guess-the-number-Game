@@ -4,6 +4,11 @@ let userGuesses = [];
 let attempts = 0; /* adding the number of attempts */
 let maxGuesses;
 
+// creating a game ending function
+function gameEnded() {
+	document.getElementById('newGameButton').style.display = 'inline';
+	document.getElementById('inputBox').setAttribute('readonly', 'readonly');
+}
 // this random number function will be called as soon as the screen loads
 // it hides part of the screen
 function init() {
@@ -59,17 +64,21 @@ function compareGuess() {
 			document.getElementById(
 				'textOutput'
 			).innerHTML = `🎊 CONGRATULATIONS you guessed the right number In ${attempts} attempts!!! 🎊`;
+			gameEnded();
 		}
 	} else {
 		if (userGuess > givenRandomNumber) {
 			document.getElementById('textOutput').innerHTML = `You you've lost! 
             The number was: ${givenRandomNumber}`;
+			gameEnded();
 		} else if (userGuess < givenRandomNumber) {
 			document.getElementById('textOutput').innerHTML = `You you've lost! 
             The number was: ${givenRandomNumber}`;
+			gameEnded();
 		} else {
 			document.getElementById('textOutput').innerHTML = `
             🎊 CONGRATULATIONS you guessed the right number In ${attempts} attempts!!! 🎊`;
+			gameEnded();
 		}
 	}
 }

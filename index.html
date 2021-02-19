@@ -9,7 +9,7 @@
     <title>Guess the Number Game</title>
 </head>
 
-<body>
+<body onload="init()">
 
     <main>
         <!-- Welcome Screen -->
@@ -18,8 +18,8 @@
             <section>
                 <p>select difficulty level:</p>
                 <div class="button-wrapper">
-                    <button>Easy: 10 attempts</button>
-                    <button>Hard: 5 attempts</button>
+                    <button onclick="easyMode()">Easy: 10 attempts</button>
+                    <button onclick="hardMode()">Hard: 5 attempts</button>
                 </div>
             </section>
         </div>
@@ -58,6 +58,9 @@
             </section>
         </div>
     </main>
+
+
+    <script src="app.js"></script>
 
 </body>
 

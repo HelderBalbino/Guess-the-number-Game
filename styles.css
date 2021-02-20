@@ -84,11 +84,18 @@ input[type='number'] {
 }
 
 #rangeOutput {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    flex-wrap: nowrap;
 }
 
 .stats {
     text-align: left;
+    background-color: rgba(255, 217, 0, 0.432);
+    border-radius: 1rem;
 }
 
 .info {
@@ -104,6 +111,22 @@ input[type='number'] {
 
 #newGameButton {
     border-radius: 1rem;
+}
+
+.flash {
+    animation: flash 1s infinite;
+}
+
+@keyframes flash {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @media (min-width: 800px) {

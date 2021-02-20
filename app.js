@@ -4,6 +4,29 @@ let userGuesses = [];
 let attempts = 0; /* adding the number of attempts */
 let maxGuesses;
 
+let low = 1;
+let high = 100;
+
+function updateRange() {
+	const rangeOutput = document.getElementById('rangeOutput');
+	rangeOutput.innerText = `${low} - ${high}`;
+	rangeOutput.style.marginLeft = low + '%';
+	rangeOutput.style.marginRight = 100 - high + '%';
+	rangeOutput.classList.add('flash');
+
+	const lowValue = document.getElementById('low');
+	lowValue.style.flex = low + '%';
+	lowValue.style.background = '#ef7b54';
+
+	const space = document.getElementById('space');
+	space.style.flex = high - low + '%';
+	space.style.background = '#83e1d0';
+
+	const highValue = document.getElementById('high');
+	highValue.style.flex = 100 - high + '%';
+	highValue.style.background = '#ef7b54';
+}
+
 // creating a game ending function
 function gameEnded() {
 	document.getElementById('newGameButton').style.display = 'inline';
@@ -60,9 +83,11 @@ function compareGuess() {
 	// created an if statement to evaluate if the user attempt is bigger than the max number of guesses
 	if (attempts < maxGuesses) {
 		if (userGuess > givenRandomNumber) {
+			if (userGuess < high) high = userGuess;
 			document.getElementById('textOutput').innerHTML = ` Your guess was too high!`;
 			document.getElementById('inputBox').value = '';
 		} else if (userGuess < givenRandomNumber) {
+			if (userGuess > low) low = userGuess;
 			document.getElementById('textOutput').innerHTML = `Your guess was too low!`;
 			document.getElementById('inputBox').value = '';
 		} else {
@@ -86,4 +111,6 @@ function compareGuess() {
 			gameEnded();
 		}
 	}
+
+	updateRange();
 }

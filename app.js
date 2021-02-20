@@ -41,7 +41,7 @@ function newGame() {
 // it hides part of the screen
 function init() {
 	givenRandomNumber = Math.floor(Math.random() * 100 + 1);
-	console.log(givenRandomNumber);
+
 	document.getElementById('newGameButton').style.display = 'none';
 	document.getElementById('gameArea').style.display = 'none';
 }
